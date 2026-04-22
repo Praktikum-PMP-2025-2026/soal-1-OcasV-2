@@ -15,15 +15,10 @@ void operasi(char *arr, int *sum, float *avg, int *max, int *idx) {
     int next = 0;
     float favg = 0;
 
-    printf("%s\n", arr);
-
     float N = atoi(strtok(arr, " "));
-
-    printf("%s\n", arr);
 
     for (int i = 0; i < (int)N; i++) {
         next = atoi(strtok(NULL, " "));
-        printf("%d\n", next);
         if (next > fmax) {
             fmax = next;
             fidx = i;
@@ -31,16 +26,13 @@ void operasi(char *arr, int *sum, float *avg, int *max, int *idx) {
         fsum += next;
     }
 
-    printf("1\n");
 
     favg = fsum/N;
 
     *sum = fsum;
     *avg = favg;
-    printf("2\n");
     *max = fmax;
     *idx = fidx;
-    printf("3\n");
 }
 
 int main() {
@@ -49,11 +41,7 @@ int main() {
     int N;
     float avg;
 
-    strcpy(&input, "5 7 2 9 9 4");
-
-    printf("%s\n", &input);
-
-    // scanf("%s", &input);
+    scanf("%s", &input);
 
     operasi(&input, &sum, &avg, &max, &id);
 

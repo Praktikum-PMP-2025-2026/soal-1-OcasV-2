@@ -8,17 +8,16 @@
 #include <string.h>
 #include <stdlib.h>
 
-void operasi(char *arr, int *sum, float *avg, int *max, int *idx) {
+void operasi(int *arr, int N, int *sum, float *avg, int *max, int *idx) {
     float fsum = 0;
     int fmax = 0;
     int fidx = 0;
     int next = 0;
     float favg = 0;
 
-    float N = atoi(strtok(arr, " "));
 
-    for (int i = 0; i < (int)N; i++) {
-        next = atoi(strtok(NULL, " "));
+    for (int i = 0; i < N; i++) {
+        next = arr[i];
         if (next > fmax) {
             fmax = next;
             fidx = i;
@@ -36,14 +35,19 @@ void operasi(char *arr, int *sum, float *avg, int *max, int *idx) {
 }
 
 int main() {
-    char input;
     int sum, max, id;
     int N;
     float avg;
 
-    scanf("%s", &input);
+    scanf("%d", &N);
 
-    operasi(&input, &sum, &avg, &max, &id);
+    int input[N];
+
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &input[i]);
+    }
+
+    operasi(input, N, &sum, &avg, &max, &id);
 
     printf("SUM %d\n", sum);
     printf("AVG %.2f\n", avg);

@@ -10,7 +10,7 @@
 
 void operasi(int *arr, int N, int *sum, float *avg, int *max, int *idx) {
     float fsum = 0;
-    int fmax = 0;
+    int fmax = arr[0];
     int fidx = 0;
     int next = 0;
     float favg = 0;
